@@ -3,19 +3,19 @@ function add(num1: number, num2: number) {
     return num1 + num2;
 }
 console.log(add(1,2));
-console.log(add(1,'2')); // error at string
+// console.log(add(1,'2')); // error at string
 
 function reverseBoolean(initialValue: boolean) {
     return !initialValue;
 }
 console.log(reverseBoolean(true));
-console.log(reverseBoolean(1)); // error at number
+// console.log(reverseBoolean(1)); // error at number
 
 function combineStrings(text1: string, text2: string) {
     return text1 + text2;
 }
 console.log(combineStrings('text', 'Text'));
-console.log(combineStrings(1, 'text')); // error at number
+// console.log(combineStrings(1, 'text')); // error at number
 
 // --------------------------------> OBJECTS, ARRAYS, ENUMS
 enum Role { ADMIN = 2, READ_ONLY = 'TEST', AUTHOR = 5 }
@@ -60,7 +60,7 @@ function combine(
 }
 
 console.log(combine('20', '25', 'as-string'));
-console.log(combine(20, '25', 'as-numbe')); // typo in shouldConvertTo
+// console.log(combine(20, '25', 'as-numbe')); // typo in shouldConvertTo
 
 // ---------------------------------->  FUNCTIONS
 // return type is calculated and is number in this case
