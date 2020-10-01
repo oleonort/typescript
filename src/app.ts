@@ -72,3 +72,41 @@ function addNumbers(num1: number, num2: number) {
 function printResult(num: number): void { // having void is optional
     console.log(num);
 }
+
+// ------------------------------------> FUNCTION TYPES
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+// combineValues = printResult; // returns error since not correct function type is assigned
+console.log(combineValues(8, 8));
+
+function addAndHandle(n1: number, n2: number, cb: (n: number) => void) {
+    const result = n1 + n2;
+    cb(result);
+}
+
+addAndHandle(10, 20, (result) => {
+    console.log(result);
+});
+
+// -------------------------------------> UNKNOWN TYPE
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = 'Artur';
+
+// need to check for type since TS doesn't allow unknown to be assigned to any other type without check
+if (typeof userInput === 'string') {
+    userName = userInput;
+}
+
+// ---------------------------------------> NEVER TYPE
+function generateError(message: string, code: number): never { // never returns anything
+    throw {
+        message,
+        errorCode: code
+    };
+}
+
+generateError('An error occurred!', 500);
